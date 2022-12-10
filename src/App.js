@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import { get, HttpClient } from './services/HttpClient';
+
+const httpClient = new HttpClient();
 
 function App() {
+
+  
+  useEffect(() => {
+    // function method
+    // get('posts',{
+    //   params:{
+    //     id: 2
+    //   }
+    // }).then(response=>response)
+
+    // class method
+    httpClient.get('posts', {
+      params: {
+        id: 2
+      }
+    }).then(response => console.log(response))
+    
+  }, [])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Here is Iran and you need to use VPN to see results in console
     </div>
   );
 }
