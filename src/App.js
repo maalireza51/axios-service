@@ -20,7 +20,10 @@ function App() {
       params: {
         id: 2
       }
-    }).then(response => console.log(response))
+    }).then(response => {
+      console.log(`Nothing complex but unfortunately forbidden`);
+      console.log(response);
+    })
     
   }, [])
   
